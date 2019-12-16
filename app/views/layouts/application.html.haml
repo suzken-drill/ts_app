@@ -1,0 +1,18 @@
+= render 'layouts/header'
+
+%body{class: "#{controller.controller_name} #{controller.action_name}"}
+  .container
+    %header.header
+      %h1#logo TS管理ツール
+
+  .container
+    = render 'layouts/nav'
+
+  .container
+    = render 'layouts/flash'
+
+  .container
+    .contents
+      = yield
+
+  = render 'layouts/footer'

@@ -1,0 +1,9 @@
+%footer.footer
+  .container
+    .footer_nav
+      %ul.breadcrumb
+        - if admin_signed_in?
+          %li.breadcrumb-item= link_to "ログアウト", destroy_admin_session_path, method: :delete
+        - else
+          %li.breadcrumb-item= link_to "ログイン", new_admin_session_path
+    %p.copyright Copyright 2019- 株式会社ドリル All Rights Reserved.
