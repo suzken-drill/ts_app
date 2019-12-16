@@ -42,3 +42,4 @@ docker/
 .DS_Store
 document/
 /public/uploads
+db/seeds/
