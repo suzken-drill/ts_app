@@ -2,17 +2,19 @@
 
 %body{class: "#{controller.controller_name} #{controller.action_name}"}
   .container
-    %header.header
-      %h1#logo TS管理ツール
+    = render 'layouts/logo'
 
   .container
     = render 'layouts/nav'
 
   .container
     = render 'layouts/flash'
+  %br
 
   .container
     .contents
       = yield
+  %br
 
+.container
   = render 'layouts/footer'

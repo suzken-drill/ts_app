@@ -1,2 +1,10 @@
-%h1 Items#edit
-%p Find me in app/views/items/edit.html.haml
+%h1 商品情報更新
+.errors
+  = render "layouts/error_message", resource: @item
+%br
+.main
+  = render 'items/form', item: @item
+%br
+.back_btn
+  = link_to '戻る', :back, class: 'btn btn-warning'
+

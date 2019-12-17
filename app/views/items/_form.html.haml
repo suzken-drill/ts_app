@@ -1,0 +1,77 @@
+= form_with model: item, local: true do |f|
+  .form-group
+    = f.label :item_number, '商品番号'
+    = f.text_field :item_number, class: 'form-control'
+  .form-group
+    = f.label :title, '商品名'
+    = f.text_field :title, class: 'form-control'
+  .form-group
+    = f.label :price, '販売価格'
+    = f.text_field :price, class: 'form-control'
+  .form-group
+    = f.label :content, '商品説明（HTML可）'
+    = f.text_area :content, class: 'form-control'
+  .form-group
+    = f.label :content_simple, '商品説明（HTML無）'
+    = f.text_area :content_simple, class: 'form-control'
+  .form-group
+    = f.label :image_url, '販売ページ用画像'
+    = f.text_field :image_url, class: 'form-control'
+  .form-group
+    = f.label :sale_start_at, '提供開始日'
+    = f.date_select :sale_start_at, { prompt: "--", default: @item.sale_start_at }
+  .form-group
+    = f.label :image_1, '商品画像1'
+    = f.text_field :image_1, class: 'form-control'
+  .form-group
+    = f.label :image_2, '商品画像2'
+    = f.text_field :image_2, class: 'form-control'
+  .form-group
+    = f.label :image_3, '商品画像3'
+    = f.text_field :image_3, class: 'form-control'
+  .form-group
+    = f.label :image_4, '商品画像4'
+    = f.text_field :image_4, class: 'form-control'
+  .form-group
+    = f.label :image_5, '商品画像5'
+    = f.text_field :image_5, class: 'form-control'
+  .form-group
+    = f.label :image_6, '商品画像6'
+    = f.text_field :image_6, class: 'form-control'
+  .form-group
+    = f.label :wholesale_price, 'もしも卸値'
+    = f.text_field :wholesale_price, class: 'form-control'
+  .form-group
+    = f.label :postage, '特殊送料'
+    = f.text_field :postage, class: 'form-control'
+  .form-group
+    = f.label :include_division, '同梱区分'
+    = f.text_field :include_division, class: 'form-control'
+  .form-group
+    = f.label :packing_size, '梱包サイズ'
+    = f.text_field :packing_size, class: 'form-control'
+  .form-group
+    = f.label :shipment_from, '出荷目安From(営業日)'
+    = f.text_field :shipment_from, class: 'form-control'
+  .form-group
+    = f.label :shipment_to, '出荷目安To(営業日)'
+    = f.text_field :shipment_to, class: 'form-control'
+  .form-group
+    = f.label :strick_price, '売価厳守商品'
+    = f.text_field :strick_price, class: 'form-control'
+  .form-group
+    = f.label :lower_price, '下限売価'
+    = f.text_field :lower_price, class: 'form-control'
+  %br
+  .send_btn
+    - case action_name
+    - when 'new' then
+      = f.submit '登　録', class: 'btn btn-primary'
+    - when 'create' then
+      = f.submit '登　録', class: 'btn btn-primary'
+    - when 'edit' then
+      = f.submit '更　新', class: 'btn btn-primary'
+    - when 'update' then
+      = f.submit '更　新', class: 'btn btn-primary'
+%br
+%hr

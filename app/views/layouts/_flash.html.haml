@@ -1,9 +1,9 @@
-.container.messages
+.messages
   - if flash[:notice].present?
     .alert.alert-success
-      %button{type: "button", "data-dismiss": "alert"}.close &times;
+      %button{type: "button", class: "close", "data-dismiss": "alert"} &times;
       = notice.html_safe
   - if flash[:error].present?
     .alert.alert-danger
-      %button{type: "button", "data-dismiss": "alert"}.close &times;
+      %button{type: "button", class: "close", "data-dismiss": "alert"} &times;
       = error.html_safe

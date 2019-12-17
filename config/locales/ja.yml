@@ -30,4 +30,59 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 ja:
-  hello: "こんにちは！"
+  title: "TopSeller管理ツール"
+  date:
+    month_names: [~, 1月, 2月, 3月, 4月, 5月, 6月, 7月, 8月, 9月, 10月, 11月, 12月]
+    order:
+      - :year
+      - :month
+      - :day
+  activerecord:
+    models:
+      item: 商品情報
+    attributes:
+      item:
+        item_number: 商品番号
+        title: 商品名
+        price: 販売価格
+        content: 商品説明文（HTMLタグあり）
+        content_simple: 商品説明文（HTMLタグなし）
+        image_url: 販売ページ用縦長画像素材HTML
+        sale_start_at: 提供開始日
+        image_1: 商品画像1
+        image_2: 商品画像2
+        image_3: 商品画像3
+        image_4: 商品画像4
+        image_5: 商品画像5
+        image_6: 商品画像6
+        wholesale_price: もしも卸値
+        postage: 特殊送料
+        include_division: 同梱区分
+        packing_size: 梱包サイズ
+        shipment_from: 出荷目安From(営業日)
+        shipment_to: 出荷目安To(営業日)
+        strick_price: 売価厳守商品
+        lower_price: 下限売価
+    errors:
+      models:
+        item:
+          attributes:
+            item_number:
+              item_number_blank_error: は必須項目です
+            title:
+              title_blank_error: は必須項目です
+            price:
+              price_blank_error: は必須項目です
+              not_a_number: は数字を登録してください
+              greater_than: は1円以上を登録してください
+              greater_than_wholesale_price: はもしも卸値超の価格を設定してください
+            content:
+              content_blank_error: は必須項目です
+            wholesale_price:
+              wholesale_price_blank_error: は必須項目です
+  message:
+    create_finish_message: 登録が完了しました
+    create_error_message: 登録に失敗しました
+    update_finish_message: 更新が完了しました
+    update_error_message: 更新に失敗しました
+    destroy_finish_message: 削除が完了しました

@@ -1,2 +1,7 @@
-%h1 Items#new
-%p Find me in app/views/items/new.html.haml
+%h2 新規商品登録
+= render 'layouts/error_message', resource: @item
+%br
+= render 'items/form', item: @item
+%br
+.back_btn
+  = link_to '戻る', :back, class: 'btn btn-warning'

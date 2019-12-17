@@ -1,2 +1,35 @@
-%h1 Items#index
-%p Find me in app/views/items/index.html.haml
+%h1 登録商品一覧
+
+- if @items.count > 0
+  %table
+    %tr
+      %th
+      %th 商品番号
+      %th 商品名
+      %th 販売価格
+      %th 卸値
+      %th 下限価格
+      %th 商品説明
+      %th
+      %th
+    - @items.each do |item|
+      %tr
+        %td= image_tag item.image_1, size: "100x100", alt: item.title
+        %td= item.item_number
+        %td= item.title
+        %td= item.price
+        %td= item.wholesale_price
+        %td= item.lower_price
+        %td= item.content_simple.truncate(100)
+        %td= link_to "編集", edit_item_path(item)
+        %td= link_to "削除", item, method: :delete, data: { confirm: "本当によろしいですか？" }, :class => "del"
+- else
+  %p 登録商品はまだありません
+
+%br
+.pagenate
+  = paginate @items
+
+%br
+.add_item
+  = link_to '新規登録', new_item_path, class: 'btn btn-primary'

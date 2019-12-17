@@ -1,2 +1,50 @@
-%h1 Items#show
-%p Find me in app/views/items/show.html.haml
+%h1
+  商品名：
+  = @item.title
+%hr
+%dl
+  %dt 商品番号
+  %dd= @item.item_number
+  %dt 販売価格
+  %dd= @item.price
+  %dt 商品説明文（HTMLタグあり）
+  %dd= @item.content
+  %dt 商品説明文（HTMLタグなし）
+  %dd= @item.content_simple
+  %dt 販売ページ用縦長画像素材HTML
+  %dd= @item.image_url
+  %dt 提供開始日
+  %dd= @item.sale_start_at
+  %dt 商品画像1
+  %dd= @item.image_1
+  %dt 商品画像2
+  %dd= @item.image_2
+  %dt 商品画像3
+  %dd= @item.image_3
+  %dt 商品画像4
+  %dd= @item.image_4
+  %dt 商品画像5
+  %dd= @item.image_5
+  %dt 商品画像6
+  %dd= @item.image_6
+  %dt もしも卸値
+  %dd= @item.wholesale_price
+  %dt 特殊送料
+  %dd= @item.postage
+  %dt 同梱区分
+  %dd= @item.include_division
+  %dt 梱包サイズ
+  %dd= @item.packing_size
+  %dt 出荷目安（営業日）
+  %dd
+    = @item.shipment_from
+    〜
+    = @item.shipment_to
+  %dt 売価厳守商品
+  %dd= @item.strick_price
+  %dt 下限売価
+  %dd= @item.lower_price
+
+%br
+= link_to '編集', edit_item_path(@item), class: 'btn btn-primary'
+= link_to '商品一覧に戻る', items_path, class: 'btn btn-primary'
